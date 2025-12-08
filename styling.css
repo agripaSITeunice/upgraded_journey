@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: url(images/heritage.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 2.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+
+.gallery {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.art-item {
+    display: flex;
+    background: #ffffff9f;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.art-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+
+.fade-in {
+    animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.img-container {
+    width: 45%;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+
+.art-item:hover img {
+    transform: scale(1.08);
+}
+
+
+.art-info {
+    width: 55%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.art-info h2 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.art-info p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #444;
+    transition: color 0.3s ease;
+}
+
+
+.art-item:hover .art-info h2 {
+    color: #4a76ff;
+}
+
+.art-item:hover .art-info p {
+    color: #4d2626;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .art-item {
+        flex-direction: column;
+    }
+
+    .img-container,
+    .art-info {
+        width: 100%;
+    }
+
+    .img-container {
+        height: 250px;
+    }
+}
